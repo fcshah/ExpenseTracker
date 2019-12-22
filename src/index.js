@@ -2,12 +2,7 @@ import React from "react";
 import { Redirect } from "react-router";
 import ReactDOM from "react-dom";
 import "./index.css";
-import {
-  Route,
-  Link,
-  IndexRoute,
-  BrowserRouter as Router
-} from "react-router-dom";
+import { Route, Link, BrowserRouter as Router } from "react-router-dom";
 //import { IndexRoute } from "react-router";
 
 //import App from './assets/js/login'
