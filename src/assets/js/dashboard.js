@@ -35,7 +35,7 @@ const Dashboard = props => {
 
   return (
     <div class="ui secondary vertical pointing menu">
-      <a class="active item">
+      <a class="active item" onClick={this.openModal}>
         Expenses
         <div class="ui left pointing label">1</div>
       </a>
