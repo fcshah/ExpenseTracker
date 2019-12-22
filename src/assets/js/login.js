@@ -36,7 +36,10 @@ const LoginForm = props => {
       </form>
 
       <div className="ui message">
-        New to us? <a href="#">Sign Up</a>
+        New to us? <a href="/signup">Sign Up</a>
+      </div>
+      <div className="ui message">
+        <a href="#">Continue as a Guest User</a>
       </div>
     </div>
   );

@@ -58,7 +58,7 @@ const SignUpForm = props => {
       </form>
 
       <div className="ui message">
-        Already a User? <a href="#">Log In</a>
+        Already a User? <a href="/">Log In</a>
       </div>
       <div className="ui message">
         <a href="#">Continue as a Guest User</a>
