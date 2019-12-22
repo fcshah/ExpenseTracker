@@ -1,6 +1,10 @@
 import React from "react";
 
-const LoginForm = function() {
+const LoginForm = props => {
+  function submitLogin() {
+    console.log("Login was clicked");
+  }
+
   return (
     <div>
       <h2 className="ui blue image header">
@@ -11,7 +15,7 @@ const LoginForm = function() {
           <div className="field">
             <div className="ui left icon input">
               <i className="user icon"></i>
-              <input type="text" name="email" placeholder="E-mail address" />
+              <input type="email" name="email" placeholder="E-mail address" />
             </div>
           </div>
           <div className="field">
@@ -20,7 +24,12 @@ const LoginForm = function() {
               <input type="password" name="password" placeholder="Password" />
             </div>
           </div>
-          <div className="ui fluid large blue submit button">Login</div>
+          <div
+            className="ui fluid large blue submit button"
+            onClick={submitLogin()}
+          >
+            Login
+          </div>
         </div>
 
         <div className="ui error message"></div>
@@ -31,6 +40,14 @@ const LoginForm = function() {
       </div>
     </div>
   );
+};
+
+LoginForm.defaultProps = {
+  fname: "",
+  lname: "",
+  email: "",
+  password: "",
+  errorMessage: ""
 };
 
 export default LoginForm;

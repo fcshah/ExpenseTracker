@@ -1,7 +1,7 @@
 import React from "react";
 import elliot from "../img/elliot.jpg";
 
-const HomeCard = function() {
+const HomeCard = props => {
   return (
     <div className="ui fluid card">
       <div className="content">

@@ -5,7 +5,7 @@ import HomeCard from "./assets/js/card";
 import LoginForm from "./assets/js/login";
 
 class App extends React.Component {
-  state = { username: "", password: "", errorMessage: "" };
+  state = {};
 
   //componentDidMount() {}
 
