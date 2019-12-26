@@ -18,7 +18,8 @@ export default class Expense extends React.Component {
     super();
 
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      time: ""
     };
 
     this.addExpense = this.addExpense.bind(this);
@@ -27,31 +28,25 @@ export default class Expense extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({ time: new Date().toLocaleTimeString() });
+    }, 1000);
+  }
+
   addExpense() {
     return (
       <div className="ui container">
-        <div class="ui labeled input">
+        
+        <div>
+          <b>{this.state.time}</b>
+        </div>
+        <div class="ui fluid labeled input">
           <div class="ui label">$</div>
           <input type="text" placeholder="Enter Amount" />
         </div>
 
-        <div class="ui search selection dropdown">
-          <i class="world icon"></i>
-          <span class="text">Select Category</span>
-          <div class="menu">
-            <div class="item">Entertainment</div>
-            <div class="item">Grocery</div>
-            <div class="item">Bills</div>
-            <div class="item">Car</div>
-            <div class="item">Clothes</div>
-            <div class="item">Communications</div>
-            <div class="item">Eating Out</div>
-            <div class="item">Food</div>
-            <div class="item">Gifts</div>
-          </div>
-        </div>
-
-        <select class="ui search selection dropdown" id="search-select">
+        <select class="ui fluid search selection dropdown" id="search-select">
           <option value="">Select Category</option>
 
           <option value="AL">Entertainment</option>
@@ -63,6 +58,23 @@ export default class Expense extends React.Component {
           <option value="OK">Food</option>
           <option value="OR">Gifts</option>
         </select>
+
+        <div class="ui fluid left corner labeled input">
+          <input type="text" placeholder="Notes" />
+          <div class="ui left corner label">
+            <i class="asterisk icon"></i>
+          </div>
+        </div>
+
+        <div className="ui left action input">
+          <button
+            className="ui teal labeled icon button"
+            onClick={this.openModal}
+          >
+            <i className="plus circle icon"></i>
+            Save
+          </button>
+        </div>
       </div>
     );
   }
@@ -82,8 +94,8 @@ export default class Expense extends React.Component {
 
   render() {
     return (
-      <div className="ui container">
-        <div className="ui secondary red raised middle aligned center aligned grid text container segment">
+      <div className="ui fluid container">
+        <div className="ui fluid secondary red raised middle aligned center aligned grid text container segment">
           <h2 class="ui center aligned icon header">
             <i class="money bill alternate icon"></i>
             Expenses
@@ -135,7 +147,7 @@ export default class Expense extends React.Component {
               className="ui teal labeled icon button"
               onClick={this.openModal}
             >
-              <i className="cart icon"></i>
+              <i className="plus circle icon"></i>
               Add New Expense
             </button>
           </div>
