@@ -3,19 +3,16 @@ import { Redirect } from "react-router";
 import ReactDOM from "react-dom";
 import "./index.css";
 import { Route, Link, BrowserRouter as Router } from "react-router-dom";
-//import { IndexRoute } from "react-router";
-
-//import App from './assets/js/login'
 import dashboard from "./assets/js/dashboard";
-
 import LoginForm from "./assets/js/login";
 import signup from "./assets/js/signup";
 import Home from "./assets/js/Home";
-//import HomeCard from './assets/js/card'
+import HomeCard from './assets/js/card'
 
 const routing = (
   <Router>
-    <div>
+  <HomeCard></HomeCard>
+    <div> 
       <Route exact path="/" component={LoginForm} />
       <Route exact path="/Home" component={Home} />
       <Route exact path="/dashboard" component={dashboard} />
